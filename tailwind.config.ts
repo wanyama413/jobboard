@@ -18,6 +18,12 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        boxx: "0px 0px 7px rgba(0,0,0,0.15)",
+      },
+      gridTemplateColumns: {
+        gridA: "250px 2fr 1fr",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +63,7 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        rads: "20px",
       },
       keyframes: {
         "accordion-down": {
