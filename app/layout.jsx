@@ -4,11 +4,12 @@ import { ClerkProvider } from "@clerk/nextjs";
 const RootLayout = ({ children }) => {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
+        <head />
         <body>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >

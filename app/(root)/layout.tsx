@@ -1,26 +1,10 @@
 /* eslint-disable camelcase */
 import type { Metadata } from "next";
+import RightSidebar from "@/components/Shared/Sidebar/RightSidebar";
 import "../globals.css";
 import React from "react";
 import Navbar from "@/components/Shared/Navbar/Navbar";
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignOutButton,
-} from "@clerk/nextjs";
-import {
-  BriefcaseIcon,
-  HelpCircleIcon,
-  HomeIcon,
-  LogInIcon,
-  LogOutIcon,
-  MessagesSquareIcon,
-  StarIcon,
-  TagIcon,
-  TrendingUpIcon,
-} from "lucide-react";
-
+import LeftSidebar from "@/components/Shared/LeftSidebar/LeftSidebar";
 import { Space_Grotesk } from "next/font/google";
 export const metadata: Metadata = {
   title: "Jobs Reservoir",
@@ -44,54 +28,12 @@ export default function Layout({
     <html lang="en">
       <body className={`${spaceGrotesk.className} `}>
         <Navbar />
-        <main className="grid grid-cols-gridA py-3 px-6 min-h-screen mt-6 gap-x-5">
-          <section className="sticky left-0 top-0 flex flex-col justify-between h-[80vh]  border-r-2 border-[#d8d5d5] ">
-            <ul className="flex flex-col justify-between h-[70%] overflow-y-auto">
-              <li className="flex items-center ">
-                <HomeIcon className="mr-4" />
-                Home
-              </li>
-              <li className="flex">
-                <BriefcaseIcon className="mr-4" />
-                Find Jobs
-              </li>
-              <li className="flex">
-                <StarIcon className="mr-4" />
-                Saved
-              </li>
-              <li className="flex">
-                <TagIcon className="mr-4" />
-                Tags
-              </li>
-              <li className="flex">
-                <MessagesSquareIcon className="mr-4" />
-                Communities
-              </li>
-              <li className="flex">
-                <HelpCircleIcon className="mr-4" />
-                Ask a Question
-              </li>
-              <li className="flex">
-                <TrendingUpIcon className="mr-4" />
-                Trends
-              </li>
-            </ul>
-
-            <SignedIn>
-              <div className="flex justify-center w-1/2 font-bold text-red-500">
-                <LogOutIcon />
-                <SignOutButton />
-              </div>
-            </SignedIn>
-            <SignedOut>
-              <div className="flex justify-center w-1/2 font-bold text-red-400">
-                <LogInIcon />
-                <SignInButton />
-              </div>
-            </SignedOut>
-          </section>
+        <main className="grid grid-cols-gridA py-3 px-6 min-h-screen mt-6 gap-x-5 ">
+          <LeftSidebar />
           <section>{children}</section>
-          <div>RIght Sidebar</div>
+          <div>
+            <RightSidebar />
+          </div>
           {/* <div>Toaster</div> */}
         </main>
       </body>
