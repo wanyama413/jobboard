@@ -31,7 +31,10 @@ const Navbar = () => {
           <Search className=" text-gray-500" />
         </div>
       </div>
-      <div className="flex items-center justify-around w-[10%]">
+      <div className="flex items-center justify-around w-[20%]">
+        <p className="text-sm font-[500]">
+          <Link href="/postjobs">POST JOB</Link>
+        </p>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon">

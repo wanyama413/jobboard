@@ -5,16 +5,16 @@ import Link from "next/link";
 
 const RightSidebar = () => {
   const Populartags = [
-    { title: "NEXT JS", hits: 31 },
+    { title: "Web Developer", hits: 31 },
     { title: "JavaScript", hits: 89 },
-    { title: "HTML", hits: 3 },
+    { title: "HR", hits: 3 },
     { title: "CSS", hits: 310 },
-    { title: "NODE JS", hits: 27 },
+    { title: "Accounting", hits: 27 },
     { title: "REACT JS", hits: 31 },
-    { title: "Laravel", hits: 31 },
+    { title: "Marketing", hits: 31 },
     { title: "Ruby on Rails", hits: 61 },
     { title: "C#", hits: 54 },
-    { title: "PHP", hits: 11 },
+    { title: "Junior Developer", hits: 11 },
   ];
   const hotQuestions = [
     {
@@ -47,7 +47,7 @@ const RightSidebar = () => {
   return (
     <section className="p-2 text-sm sticky right-0 top-28 flex flex-col border-[#d8d5d5] border-l-2 ">
       <div>
-        <p className="font-bold text-lg mb-3">Top Questions</p>
+        <p className="font-bold text-lg mb-3">Featured Jobs</p>
         <ul>
           {hotQuestions?.slice(0, 4).map((question) => {
             return (

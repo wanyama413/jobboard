@@ -18,7 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { BadgeSwissFrancIcon } from "lucide-react";
+import { ListFilterIcon } from "lucide-react";
 
 type Status = {
   value: string;
@@ -580,7 +580,7 @@ export function JobTitle() {
               <>{selectedStatus.label}</>
             ) : (
               <>
-                <BadgeSwissFrancIcon size={12} className="mr-2" /> Field
+                <ListFilterIcon size={12} className="mr-2" /> Field
               </>
             )}
           </Button>
@@ -601,7 +601,7 @@ export function JobTitle() {
           ) : (
             <>
               {" "}
-              <BadgeSwissFrancIcon size={10} className="mr-2" /> Field
+              <ListFilterIcon size={10} className="mr-2" /> Field
             </>
           )}
         </Button>
