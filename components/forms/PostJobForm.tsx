@@ -37,7 +37,7 @@ const PostJobForm = () => {
       description: "",
       tags: [],
       place: "",
-      salary: 0,
+      salary: "",
     },
   });
   //  Handle Tag Input

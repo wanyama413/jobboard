@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import React from "react";
 import {
   SignedIn,
@@ -12,43 +14,65 @@ import {
   LogInIcon,
   LogOutIcon,
   MessagesSquareIcon,
+  MountainIcon,
   StarIcon,
   TagIcon,
   TrendingUpIcon,
 } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const LeftSidebar = () => {
+  const pathname = usePathname();
+  const Links = [
+    { title: "Home", href: "/", icon: <HomeIcon className="mr-4" /> },
+    {
+      title: "Find Jobs",
+      href: "/jobsinkenya",
+      icon: <BriefcaseIcon className="mr-4" />,
+    },
+    {
+      title: "Saved",
+      href: "/saved",
+      icon: <StarIcon className="mr-4" />,
+    },
+    {
+      title: "Tags",
+      href: "/tags",
+      icon: <TagIcon className="mr-4" />,
+    },
+    {
+      title: "Communities",
+      href: "/communities",
+      icon: <MessagesSquareIcon className="mr-4" />,
+    },
+    {
+      title: "Ask a Question",
+      href: "/askaquestion",
+      icon: <HelpCircleIcon className="mr-4 " />,
+    },
+    {
+      title: "Job Trends",
+      href: "/jobtrendinkenya",
+      icon: <MountainIcon className="mr-4" />,
+    },
+  ];
   return (
     <section className="sticky left-0 top-28 flex flex-col justify-between h-[70vh]  border-r-2 border-[#d8d5d5] ">
       <ul className="flex flex-col justify-between h-[75%] overflow-y-auto">
-        <li className="flex items-center ">
-          <HomeIcon className="mr-4" />
-          Home
-        </li>
-        <li className="flex">
-          <BriefcaseIcon className="mr-4" />
-          Find Jobs
-        </li>
-        <li className="flex">
-          <StarIcon className="mr-4" />
-          Saved
-        </li>
-        <li className="flex">
-          <TagIcon className="mr-4" />
-          Tags
-        </li>
-        <li className="flex">
-          <MessagesSquareIcon className="mr-4" />
-          Communities
-        </li>
-        <li className="flex">
-          <HelpCircleIcon className="mr-4" />
-          Ask a Question
-        </li>
-        <li className="flex">
-          <TrendingUpIcon className="mr-4" />
-          Job Trends
-        </li>
+        {Links.map((link) => {
+          const isActive = pathname === link.href;
+          return (
+            <li
+              key={link.title}
+              className={`flex ${isActive ? "font-bold" : ""}`}
+            >
+              {React.cloneElement(link.icon, {
+                className: `mr-4 ${isActive ? "fill-black stroke-white" : ""}`,
+              })}
+              <Link href={link.href}> {link.title}</Link>
+            </li>
+          );
+        })}
       </ul>
 
       <SignedIn>
